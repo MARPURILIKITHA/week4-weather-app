@@ -1,0 +1,130 @@
+/* Weather Icons Stylesheet */
+
+.weather-icon {
+    display: inline-block;
+    font-size: 5rem;
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Icon Classes for Different Weather Conditions */
+.icon-clear {
+    color: #ffd700;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.icon-cloud {
+    color: #87ceeb;
+    filter: drop-shadow(0 0 10px rgba(135, 206, 235, 0.5));
+}
+
+.icon-rain {
+    color: #4682b4;
+    filter: drop-shadow(0 0 10px rgba(70, 130, 180, 0.5));
+    animation: rain 2s ease-in-out infinite;
+}
+
+@keyframes rain {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+.icon-snow {
+    color: #e0e0e0;
+    filter: drop-shadow(0 0 10px rgba(224, 224, 224, 0.5));
+    animation: snow 3s ease-in-out infinite;
+}
+
+@keyframes snow {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+.icon-thunder {
+    color: #ffa500;
+    filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.7));
+    animation: thunder 1.5s ease-in-out infinite;
+}
+
+@keyframes thunder {
+    0%, 100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.7));
+    }
+    50% {
+        opacity: 0.8;
+        filter: drop-shadow(0 0 25px rgba(255, 165, 0, 1));
+    }
+}
+
+.icon-mist {
+    color: #c0c0c0;
+    filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.5));
+    opacity: 0.8;
+}
+
+.icon-default {
+    color: #87ceeb;
+}
+
+/* Forecast Icon Styles */
+.forecast-icon {
+    font-size: 2.5rem;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Icon Sizes */
+@media (max-width: 768px) {
+    .weather-icon {
+        font-size: 4rem;
+    }
+    
+    .forecast-icon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-icon {
+        font-size: 3rem;
+    }
+    
+    .forecast-icon {
+        font-size: 1.5rem;
+    }
+}
+
+

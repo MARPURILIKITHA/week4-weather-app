@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>WEATHER DASHBOARD</h1>
+        </header>
+
+        <div class="controls-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="citySearch" 
+                    class="search-input" 
+                    placeholder="Search city..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <span class="icon">🔍</span>
+                </button>
+            </div>
+
+            <div class="controls-right">
+                <div class="unit-toggle">
+                    <button id="unitC" class="unit-btn active">°C</button>
+                    <button id="unitF" class="unit-btn">°F</button>
+                </div>
+                <button id="locationBtn" class="location-btn">
+                    <span class="icon">📍</span> Use my location
+                </button>
+            </div>
+        </div>
+
+        <div id="loadingState" class="loading-state hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <div id="errorState" class="error-state hidden">
+            <p class="error-message"></p>
+        </div>
+
+        <div id="weatherContent" class="weather-content hidden">
+            <div class="location-info">
+                <p class="current-location">
+                    <span class="icon">📍</span>
+                    <span id="currentLocation">-</span>
+                </p>
+                <p class="last-updated">
+                    <span class="icon">🕐</span>
+                    <span id="lastUpdated">-</span>
+                </p>
+            </div>
+
+            <section class="current-weather">
+                <h2>Current Weather:</h2>
+                <div class="weather-card current-card">
+                    <div class="weather-main">
+                        <div class="temperature-section">
+                            <span id="temperature" class="temperature">-</span>
+                            <span class="feels-like">Feels like: <span id="feelsLike">-</span></span>
+                        </div>
+                        <div class="weather-icon-container">
+                            <div id="weatherIcon" class="weather-icon"></div>
+                            <p id="weatherCondition" class="weather-condition">-</p>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="icon">💧</span>
+                            <span class="label">Humidity:</span>
+                            <span id="humidity">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">💨</span>
+                            <span class="label">Wind:</span>
+                            <span id="windSpeed">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="icon">📊</span>
+                            <span class="label">Pressure:</span>
+                            <span id="pressure">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="forecast-section">
+                <h2>5-Day Forecast:</h2>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast cards will be inserted here -->
+                </div>
+            </section>
+
+            <section class="favorites-section">
+                <h2>Favorite Cities:</h2>
+                <div id="favoritesContainer" class="favorites-container">
+                    <!-- Favorite cities will be inserted here -->
+                </div>
+                <button id="addToFavorites" class="add-favorite-btn hidden">
+                    <span class="icon">⭐</span> Add to Favorites
+                </button>
+            </section>
+        </div>
+    </div>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/storage.js"></script>
+    <script type="module" src="js/weatherService.js"></script>
+    <script type="module" src="js/ui.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
+
+

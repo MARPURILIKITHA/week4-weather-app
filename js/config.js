@@ -3,7 +3,7 @@
 // Get your free API key from: https://openweathermap.org/api
 
 export const API_CONFIG = {
-    API_KEY: 'cbdd07d972015964480e42307856c63c', // Replace with your actual API key
+    API_KEY: 'fd4b7dbc3299bae5fb587e5fb9429270', // Replace with your actual API key
     BASE_URL: 'https://api.openweathermap.org/data/2.5',
     ENDPOINTS: {
         CURRENT_WEATHER: '/weather',

@@ -214,58 +214,7 @@ handleLocationSearch() {
         }
     );
 }
-    // handleLocationSearch() {
-    //     if (!navigator.geolocation) {
-    //         uiManager.showError('Geolocation is not supported by your browser.');
-    //         return;
-    //     }
-
-    //     uiManager.showLoading();
-    //     uiManager.elements.locationBtn.disabled = true;
-
-    //     navigator.geolocation.getCurrentPosition(
-    //         async (position) => {
-    //             try {
-    //                 const { lat, lon } = position.coords;
-    //                 const weatherData = await weatherService.getWeatherByCoords(lat, lon, this.currentUnit);
-
-    //                 const formattedCurrent = weatherService.formatCurrentWeather(weatherData.current, this.currentUnit);
-    //                 const formattedForecast = weatherService.formatForecast(weatherData.forecast, this.currentUnit);
-
-    //                 this.currentCity = formattedCurrent.city;
-    //                 uiManager.elements.citySearch.value = formattedCurrent.city.split(',')[0];
-
-    //                 uiManager.displayCurrentWeather(formattedCurrent);
-    //                 uiManager.displayForecast(formattedForecast);
-    //                 uiManager.showWeatherContent();
-    //                 uiManager.updateFavoriteButton(formattedCurrent.city);
-
-    //                 preferencesStorage.setLastCity(formattedCurrent.city);
-    //                 uiManager.hideLoading();
-    //             } catch (error) {
-    //                 uiManager.hideLoading();
-    //                 uiManager.showError(error.message);
-    //             } finally {
-    //                 uiManager.elements.locationBtn.disabled = false;
-    //             }
-    //         },
-    //         (error) => {
-    //             uiManager.hideLoading();
-    //             uiManager.elements.locationBtn.disabled = false;
-                
-    //             let errorMessage = 'Unable to retrieve your location.';
-    //             if (error.code === error.PERMISSION_DENIED) {
-    //                 errorMessage = 'Location access denied. Please enable location permissions.';
-    //             } else if (error.code === error.POSITION_UNAVAILABLE) {
-    //                 errorMessage = 'Location information unavailable.';
-    //             } else if (error.code === error.TIMEOUT) {
-    //                 errorMessage = 'Location request timed out.';
-    //             }
-                
-    //             uiManager.showError(errorMessage);
-    //         }
-    //     );
-    // }
+   
 
     // Change temperature unit
     async changeUnit(unit) {
